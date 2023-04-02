@@ -1,0 +1,11 @@
+from sys import argv
+
+_, file, *_ = argv
+
+nums = []
+with open(file) as f:
+    for line in f:
+        nums.append(int(line))
+m = sorted(nums)[len(nums) // 2]
+answer = sum(abs(v - m) for v in nums)
+print(answer)
